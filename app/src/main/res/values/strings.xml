@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">APIDataBrowser</string>
+    <string name="title_contact_detail">Contact Detail</string>
+    <string name="fullname_text">Fullname</string>
+    <string name="some_text">Some text</string>
+    <string name="search_text">Search</string>
+    <string name="network_settings_title">Network settings</string>
+    <string name="network_settings_message">Application can\'t download contacts. Do you want to go to settings menu to enable data transfer?</string>
+    <string name="network_settings_positive_btn">Settings</string>
+    <string name="network_settings_negative_btn">Cancel</string>
+</resources>

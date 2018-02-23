@@ -1,0 +1,81 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/imageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/detailIv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/default_contact"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_vertical|center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:id="@+id/fullnameTv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:layout_gravity="bottom|start"
+                    android:gravity="bottom|start"
+                    android:padding="10dp"
+                    android:text="@string/fullname_text"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorAccent"/>
+
+                <ToggleButton
+                    android:id="@+id/favouriteBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="bottom|end"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    style="@style/toggleButton"
+                    android:background="@drawable/ic_toggle_bg"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/detailsRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/contact_detail_content" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
+
+
+
