@@ -5,12 +5,18 @@ import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import com.example.hubson.randomuserapp.repository.local.pojo.Location;
+import com.example.hubson.randomuserapp.repository.local.pojo.Name;
+import com.example.hubson.randomuserapp.repository.local.pojo.Picture;
+
 @Entity(tableName = "Users")
 public class User {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
-    private final String name;
+    @Embedded
+    private final Name name;
+
     private final String gender;
     private final String phone;
     private final String email;
@@ -18,19 +24,19 @@ public class User {
     @Embedded
     private final Location location;
 
-    @ColumnInfo(name = "photo_url")
-    private final String photoURL;
+    @Embedded
+    private final Picture picture;
 
     @ColumnInfo(name = "is_favourite")
     private boolean isFavourite;
 
-    public User(String name, String gender, String phone, String email, Location location, String photoURL) {
+    public User(Name name, String gender, String phone, String email, Location location, Picture picture) {
         this.name = name;
         this.gender = gender;
         this.phone = phone;
         this.email = email;
         this.location = location;
-        this.photoURL = photoURL;
+        this.picture = picture;
         this.isFavourite = false;
     }
 
@@ -38,7 +44,7 @@ public class User {
         return id;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
 
@@ -58,8 +64,8 @@ public class User {
         return location;
     }
 
-    public String getPhotoURL() {
-        return photoURL;
+    public Picture getPicture() {
+        return picture;
     }
 
     public boolean isFavourite() {

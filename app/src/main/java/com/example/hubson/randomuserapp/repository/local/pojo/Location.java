@@ -1,4 +1,4 @@
-package com.example.hubson.randomuserapp.repository.local.entity;
+package com.example.hubson.randomuserapp.repository.local.pojo;
 
 public class Location {
     private final String street;
